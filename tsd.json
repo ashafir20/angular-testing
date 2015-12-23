@@ -1,0 +1,42 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "angularjs/angular.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "log4js/log4js.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "mime/mime.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "express/express.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "node/node.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "karma/karma.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "jasmine/jasmine.d.ts": {
+      "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    }
+  }
+}
