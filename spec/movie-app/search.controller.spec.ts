@@ -14,4 +14,10 @@ describe('Search Controller', () => {
         
        expect($location.url).toBe('results?q=star%20wars');
     });
+    
+    it('should not redirect to query results for empty query', () => {
+        $scope.query = '';
+        $scope.search();
+        expect($location.url).toBe('');
+    });
 });
