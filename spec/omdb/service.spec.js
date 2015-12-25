@@ -20,7 +20,7 @@ describe('omdb service', function() {
 		$httpBackend.whenGET(expectedUrl)
 			.respond(200, movieData);
 
-		omdbApi.searchApi('star wars')
+		omdbApi.search('star wars')
 			.then(function(data) {
 				response = data;
 			});
@@ -36,7 +36,7 @@ describe('omdb service', function() {
 		$httpBackend.expectGET('http://www.omdbapi.com/?v=1&i=tt0076759')
 			.respond(500);
 
-		omdbApi.findApi('tt0076759')
+		omdbApi.find('tt0076759')
 			.then(function(data) {
 				response = data;
 			})
@@ -55,7 +55,7 @@ describe('omdb service', function() {
 		$httpBackend.expectGET('http://www.omdbapi.com/?v=1&i=tt0076759')
 			.respond(200, movieDataById);
 
-		omdbApi.findApi('tt0076759')
+		omdbApi.find('tt0076759')
 			.then(function(data) {
 				response = data;
 			});
