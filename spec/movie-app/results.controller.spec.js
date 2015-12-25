@@ -4,15 +4,17 @@ describe('Search Controller', function () {
     var $this;
     var $q;
     var $rootScope;
+    var $location;
     var $controller;
     var omdbApi;
     beforeEach(angular.mock.module('omdb'));
     beforeEach(angular.mock.module('movieApp'));
-    beforeEach(inject(function (_$controller_, _$q_, _$rootScope_, _omdbApi_) {
+    beforeEach(inject(function (_$controller_, _$location_, _$q_, _$rootScope_, _omdbApi_) {
         $controller = _$controller_;
         $q = _$q_;
         $rootScope = _$rootScope_;
         omdbApi = _omdbApi_;
+        $location = _$location_;
     }));
     it('should redirect to the query results page for non empty query', function () {
         spyOn(omdbApi, 'search').and.callFake(function () {
@@ -20,11 +22,24 @@ describe('Search Controller', function () {
             deferred.resolve(results);
             return deferred.promise;
         });
+        $location.search('q', 'star wars');
         $this = $controller('ResultsController');
         $rootScope.$apply();
         expect($this.results[0].Title).toBe(results.Search[0].Title);
         expect($this.results[1].Title).toBe(results.Search[1].Title);
         expect($this.results[2].Title).toBe(results.Search[2].Title);
+        expect(omdbApi.search).toHaveBeenCalledWith('star wars');
+    });
+    it('should set result status to error', function () {
+        spyOn(omdbApi, 'search').and.callFake(function () {
+            var deferred = $q.defer();
+            deferred.reject();
+            return deferred.promise;
+        });
+        $location.search('q', 'star wars');
+        $this = $controller('ResultsController');
+        $rootScope.$apply();
+        expect($this.errorMessage).toBe('Something went wrong!');
     });
 });
 //# sourceMappingURL=results.controller.spec.js.map
